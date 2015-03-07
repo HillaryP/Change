@@ -16,15 +16,19 @@ public class Authorize extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_authorize);
-
-        Button auth = (Button) findViewById(R.id.authPayments);
-        auth.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent authIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://api.venmo.com/v1/oauth/authorize?client_id=2422&scope=make_payments%20access_profile"));
-                startActivity(authIntent);
-            }
-        });
+        if (((ChangeApp)getApplication()).getAccessToken().length() == 0) {
+            Button auth = (Button) findViewById(R.id.authPayments);
+            auth.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent authIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://api.venmo.com/v1/oauth/authorize?client_id=2422&scope=make_payments%20access_profile"));
+                    startActivity(authIntent);
+                }
+            });
+        } else {
+            Intent payment = new Intent(this, Payment.class);
+            startActivity(payment);
+        }
     }
 
 
