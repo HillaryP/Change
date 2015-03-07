@@ -65,7 +65,7 @@
         android:layout_height="wrap_content">
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="70dp"
             android:src="@drawable/contactsbar" />
     </LinearLayout>
 
@@ -82,11 +82,11 @@
             android:textColor="#626753"
             android:textSize="18dp" />
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/unselectedicon"
-            android:layout_marginLeft="179dp"/>
+        <!--<ImageView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:src="@drawable/unselectedicon"-->
+            <!--android:layout_marginLeft="179dp"/>-->
 
     </LinearLayout>
 
@@ -114,11 +114,11 @@
             android:textColor="#626753"
             android:textSize="18dp" />
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/unselectedicon"
-            android:layout_marginLeft="182dp"/>
+        <!--<ImageView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:src="@drawable/unselectedicon"-->
+            <!--android:layout_marginLeft="182dp"/>-->
 
     </LinearLayout>
 
@@ -146,11 +146,11 @@
             android:textColor="#626753"
             android:textSize="18dp" />
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/unselectedicon"
-            android:layout_marginLeft="175dp"/>
+        <!--<ImageView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:src="@drawable/unselectedicon"-->
+            <!--android:layout_marginLeft="175dp"/>-->
 
     </LinearLayout>
 
