@@ -1,28 +1,30 @@
 package edu.washington.prathh.change;
 
+import android.content.Intent;
 import android.net.Uri;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.TextView;
-
-import org.w3c.dom.Text;
-
-import java.util.List;
+import android.view.View;
+import android.widget.Button;
 
 
-public class Payment extends ActionBarActivity {
+public class Authorize extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_payment);
-        Uri data = getIntent().getData();
-        List<String> params = data.getPathSegments();
-        String first = params.get(0);
-        TextView view = (TextView) findViewById(R.id.user_info);
-        view.setText(first);
+        setContentView(R.layout.activity_authorize);
+
+        Button auth = (Button) findViewById(R.id.authPayments);
+        auth.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent authIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://api.venmo.com/v1/oauth/authorize?client_id=2422&scope=make_payments%20access_profile"));
+                startActivity(authIntent);
+            }
+        });
     }
 
 
