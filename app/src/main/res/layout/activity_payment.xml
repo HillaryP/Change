@@ -4,13 +4,14 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context="edu.washington.prathh.change.Payment">
+    tools:context="edu.washington.prathh.change.Payment"
+    android:id="@+id/Payment">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="User Info"
+        android:text="Payment"
         android:id="@+id/header"
         android:layout_centerHorizontal="true" />
 
@@ -22,5 +23,14 @@
         android:layout_below="@+id/header"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="28dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Next"
+        android:id="@+id/button1"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
 </RelativeLayout>

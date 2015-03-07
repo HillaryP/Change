@@ -20,9 +20,20 @@
             android:name=".Payment"
             android:label="@string/title_activity_payment" >
             <intent-filter>
-                <data android:scheme="http" android:host="students.washington.edu/prathh/change.html"/>
+                <data
+                    android:host="students.washington.edu/prathh/change.html"
+                    android:scheme="http" />
+
                 <action android:name="android.intent.action.VIEW" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".Payment_Step2"
+            android:label="@string/title_activity_payment__step2"
+            android:parentActivityName=".Payment" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="edu.washington.prathh.change.Payment" />
         </activity>
     </application>
 
