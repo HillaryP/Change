@@ -118,8 +118,7 @@
             android:layout_marginLeft="90dp"
             android:layout_height="wrap_content"
             android:src="@drawable/checkmark"
-            android:id="@+id/glaad_check"
-            android:visibility="invisible" />
+            android:id="@+id/glaad_check" />
     </LinearLayout>
 
     <LinearLayout
