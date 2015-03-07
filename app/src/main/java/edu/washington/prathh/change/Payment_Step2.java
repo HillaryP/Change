@@ -65,8 +65,8 @@ public class Payment_Step2 extends ActionBarActivity {
         Payment_Step2.this.amount = getIntent().getExtras().getString("amount");
         Payment_Step2.this.recipient = ((EditText)findViewById(R.id.phone_number)).getText().toString();
         Log.i("Payment_Step2", "Recip: " + this.recipient + " " + this.amount + ", Donate: 7814922986 " + change);
-        new PaymentRequestTask().execute(URL, this.amount, this.recipient);
-        new PaymentRequestTask().execute(URL, "" + change, "7814922986");
+        new PaymentRequestTask().execute(URL_TEST, this.amount, this.recipient);
+        new PaymentRequestTask().execute(URL_TEST, "" + change, "7814922986");
     }
 
     @Override
