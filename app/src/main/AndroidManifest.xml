@@ -30,6 +30,14 @@
                     android:pathPrefix="/prathh/change"/>
             </intent-filter>
         </activity>
+        <activity
+            android:name=".Payment_Step2"
+            android:label="@string/title_activity_payment__step2"
+            android:parentActivityName=".Payment" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="edu.washington.prathh.change.Payment" />
+        </activity>
     </application>
 
 </manifest>
