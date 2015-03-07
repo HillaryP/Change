@@ -37,10 +37,6 @@ public class Payment extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_payment);
         Uri data = getIntent().getData();
-        List<String> params = data.getPathSegments();
-        String first = params.get(0);
-        TextView view = (TextView) findViewById(R.id.user_info);
-        view.setText(first);
         addListenerOnButton();
         String token = data.getQueryParameter("access_token");
         ((ChangeApp)getApplication()).setAccessToken(token);
