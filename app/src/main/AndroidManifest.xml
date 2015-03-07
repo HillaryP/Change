@@ -35,6 +35,22 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="edu.washington.prathh.change.Payment" />
         </activity>
+        <activity
+            android:name=".Settings"
+            android:label="@string/title_activity_settings"
+            android:parentActivityName=".Payment" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="edu.washington.prathh.change.Payment" />
+        </activity>
+        <activity
+            android:name=".Donate"
+            android:label="@string/title_activity_donate"
+            android:parentActivityName=".Payment" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="edu.washington.prathh.change.Payment" />
+        </activity>
     </application>
 
 </manifest>
