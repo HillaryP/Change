@@ -30,22 +30,8 @@ public class Authorize extends ActionBarActivity {
             Intent payment = new Intent(this, Payment.class);
             startActivity(payment);
         }
-        addListenerOnButton();
     }
 
-    public void addListenerOnButton() {
-        final Context context = this;
-        button = (Button) findViewById(R.id.button3);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View arg0) {
-
-                Intent intent = new Intent(context, Settings.class);
-                startActivity(intent);
-            }
-        });
-
-    }
 
 
     @Override
