@@ -5,19 +5,47 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context="edu.washington.prathh.change.Donate"
-    android:orientation="horizontal"
+    android:orientation="vertical"
     android:weightSum="1">
 
-    <TextView android:text=""
+
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/amount_donated"/>
+        android:text="Donations"
+        android:textStyle="bold"
+        android:textSize="34dp"
+        android:textColor="#8FBE00"
+        android:layout_gravity="center"/>
 
-    <ImageView
+    <TextView
         android:layout_width="wrap_content"
-        android:layout_height="122dp"
-        android:src="@drawable/donations"
-        android:layout_weight="0.20"
-        android:layout_gravity="center_horizontal" />
+        android:layout_height="wrap_content"
+        android:text="Amount donated to date..."
+        android:textColor="#00A8C6"
+        android:textSize="18dp"
+        android:layout_marginTop="50dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="$2.87"
+        android:textStyle="bold"
+        android:textSize="64dp"
+        android:id="@+id/amount_donated"
+        android:textColor="#8FBE00"
+        android:layout_marginTop="30dp"
+        android:layout_gravity="center"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="That's a lot of change ;)"
+        android:textStyle="bold"
+        android:textSize="30dp"
+        android:textColor="#8FBE00"
+        android:layout_marginTop="30dp"
+        android:layout_gravity="center"/>
+
 
 </LinearLayout>

@@ -15,7 +15,7 @@ public class Donate extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_donate);
         TextView textView = (TextView) findViewById(R.id.amount_donated);
-        textView.setText("You have donated $" + ((ChangeApp)getApplication()).getChange() + " so far!\nThat's a lot of change...");
+        textView.setText("$" + ((ChangeApp)getApplication()).getChange());
     }
 
 
