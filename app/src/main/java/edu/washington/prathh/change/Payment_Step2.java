@@ -46,7 +46,7 @@ public class Payment_Step2 extends ActionBarActivity {
         double dollarAmount = Double.parseDouble(getIntent().getExtras().getString("amount"));
         int dollarUp = (int) dollarAmount + 1;
         final double change = round(Math.abs(dollarUp - dollarAmount));
-        donateAmount.setText("+" + change + " for HTC");
+        donateAmount.setText("+" + change + " for " + ((ChangeApp)getApplication()).getCharity());
 
         Button submit = (Button) findViewById(R.id.submit);
         submit.setOnClickListener(new View.OnClickListener() {
