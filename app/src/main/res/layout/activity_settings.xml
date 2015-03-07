@@ -5,20 +5,142 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context="edu.washington.prathh.change.Settings"
-    android:orientation="horizontal">
+    android:orientation="vertical">
 
+
+    <!--<TextView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:textAppearance="?android:attr/textAppearanceLarge"-->
+        <!--android:text="Settings"-->
+        <!--android:id="@+id/headerSettings"-->
+        <!--android:layout_marginBottom="20dp"-->
+        <!--android:layout_gravity="center_horizontal"/>-->
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Settings"
-        android:id="@+id/headerSettings"
-        android:layout_centerHorizontal="true"
-        android:layout_gravity="center"/>
+        android:text="Charity Selection"
+        android:layout_marginBottom="40dp"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        android:textColor="#00A8C6" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:src="@drawable/hrc_logo"
+            android:layout_marginRight="4dp"
+        />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Human Rights Campaign \nwww.hrc.org"
+            android:textSize="15dp"
+            android:textColor="#626753"
+            android:layout_marginTop="10dp"/>
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_marginLeft="25dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/checkmark"/>
 
 
+    </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="30dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:src="@drawable/trevor_project_logo"
+            android:layout_marginRight="4dp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="The Trevor Project \nwww.hrc.org"
+            android:textSize="15dp"
+            android:textColor="#626753"
+            android:layout_marginTop="10dp"
+            android:id="@+id/checkmarkClick"
+            android:onClick="showCheckmark"/>
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_marginLeft="66dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/checkmark"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="30dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:src="@drawable/glaad_logo"
+            android:layout_marginRight="4dp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="GLAAD \nwww.glaad.org"
+            android:textSize="15dp"
+            android:textColor="#626753"
+            android:layout_marginTop="10dp"/>
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_marginLeft="90dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/checkmark"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="30dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:src="@drawable/campus_pride_logo"
+            android:layout_marginRight="4dp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Campus Pride \nwww.campuspride.org"
+            android:textSize="15dp"
+            android:textColor="#626753"
+            android:layout_marginTop="10dp"/>
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_marginLeft="40dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/checkmark"/>
+    </LinearLayout>
 
 
 </LinearLayout>

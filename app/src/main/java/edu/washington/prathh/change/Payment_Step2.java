@@ -1,5 +1,7 @@
 package edu.washington.prathh.change;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -66,7 +68,6 @@ public class Payment_Step2 extends ActionBarActivity {
         new PaymentRequestTask().execute(URL, this.amount, this.recipient);
         new PaymentRequestTask().execute(URL, "" + change, "7814922986");
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

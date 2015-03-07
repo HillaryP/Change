@@ -1,5 +1,6 @@
 package edu.washington.prathh.change;
 
+import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.support.v7.app.ActionBarActivity;
@@ -11,7 +12,7 @@ import android.widget.Button;
 
 
 public class Authorize extends ActionBarActivity {
-
+    Button button;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,6 +30,21 @@ public class Authorize extends ActionBarActivity {
             Intent payment = new Intent(this, Payment.class);
             startActivity(payment);
         }
+        addListenerOnButton();
+    }
+
+    public void addListenerOnButton() {
+        final Context context = this;
+        button = (Button) findViewById(R.id.button3);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View arg0) {
+
+                Intent intent = new Intent(context, Settings.class);
+                startActivity(intent);
+            }
+        });
+
     }
 
 

@@ -4,6 +4,9 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.TextView;
+import android.widget.Toast;
 
 
 public class Settings extends ActionBarActivity {
@@ -12,6 +15,13 @@ public class Settings extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
+    }
+
+    public void showCheckmark (View view1) {
+        // use view field methods to get image
+        // cast as text view
+        // use info about that view to determine which image needs to be shown
+        //Toast.makeText(this, ((TextView) view1).getText(), Toast.LENGTH_LONG).show();
     }
 
 
