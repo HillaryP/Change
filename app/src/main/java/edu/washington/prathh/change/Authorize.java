@@ -55,13 +55,4 @@ public class Authorize extends Activity {
 
         return super.onOptionsItemSelected(item);
     }
-
-    @Override
-    public void onResume() {
-        super.onResume();
-        if (((ChangeApp)getApplication()).getAccessToken() != null) {
-            Intent payment = new Intent(this, Payment.class);
-            startActivity(payment);
-        }
-    }
 }
