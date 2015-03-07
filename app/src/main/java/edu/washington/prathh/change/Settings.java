@@ -23,18 +23,22 @@ public class Settings extends ActionBarActivity {
         switch (((TextView) view1).getText().toString()) {
             case "Human Rights Campaign \nwww.hrc.org":
                 ImageView image = (ImageView) findViewById(R.id.hrc_check);
+                ((ChangeApp)getApplication()).setCharity("Human Rights Campaign");
                 image.setVisibility(View.VISIBLE);
                 break;
             case "The Trevor Project \nwww.hrc.org":
                 ImageView image2 = (ImageView) findViewById(R.id.trevor_check);
+                ((ChangeApp)getApplication()).setCharity("The Trevor Project");
                 image2.setVisibility(View.VISIBLE);
                 break;
             case "GLAAD \nwww.glaad.org":
                 ImageView image3 = (ImageView) findViewById(R.id.glaad_check);
+                ((ChangeApp)getApplication()).setCharity("GLAAD");
                 image3.setVisibility(View.VISIBLE);
                 break;
             case "Campus Pride \nwww.campuspride.org":
                 ImageView image4 = (ImageView) findViewById(R.id.campus_check);
+                ((ChangeApp)getApplication()).setCharity("Campus Pride");
                 image4.setVisibility(View.VISIBLE);
                 break;
         }

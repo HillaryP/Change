@@ -42,4 +42,14 @@ public class ChangeApp extends Application {
         editor.putFloat("change", (float) change);
         editor.apply();
     }
+
+    public String getCharity() {
+        return prefs.getString("charity", "GLAAD");
+    }
+
+    public void setCharity(String charity) {
+        SharedPreferences.Editor editor = prefs.edit();
+        editor.putString("charity", charity);
+        editor.apply();
+    }
 }
