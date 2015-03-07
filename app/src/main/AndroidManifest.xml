@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="edu.washington.prathh.change" >
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/AppTheme"
+        android:name="ChangeApp" >
         <activity
             android:name=".Authorize"
             android:label="@string/app_name" >
@@ -20,11 +22,13 @@
             android:name=".Payment"
             android:label="@string/title_activity_payment" >
             <intent-filter>
-                <data
-                    android:host="students.washington.edu/prathh/change.html"
-                    android:scheme="http" />
-
                 <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data
+                    android:scheme="http"
+                    android:host="students.washington.edu"
+                    android:pathPrefix="/prathh/change"/>
             </intent-filter>
         </activity>
         <activity
