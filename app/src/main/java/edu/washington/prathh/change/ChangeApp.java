@@ -30,4 +30,16 @@ public class ChangeApp extends Application {
         editor.putString("accessToken", token);
         editor.apply();
     }
+
+    public double getChange() {
+        double change = (double) prefs.getFloat("change", (float) 0.0);
+        change = Math.round(change * 100) / 100.0;
+        return change;
+    }
+
+    public void setChange(double change) {
+        SharedPreferences.Editor editor = prefs.edit();
+        editor.putFloat("change", (float) change);
+        editor.apply();
+    }
 }
