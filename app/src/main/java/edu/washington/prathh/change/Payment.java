@@ -38,10 +38,10 @@ public class Payment extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_payment);
+        addListenerOnButton();
         editText = (EditText) findViewById(R.id.editText);
         if (((ChangeApp)getApplication()).getAccessToken() == null) {
             Uri data = getIntent().getData();
-            addListenerOnButton();
             String token = data.getQueryParameter("access_token");
             ((ChangeApp) getApplication()).setAccessToken(token);
             new InfoRequestTask().execute(ME_URL + token);
