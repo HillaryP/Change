@@ -1,5 +1,6 @@
 package edu.washington.prathh.change;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
@@ -9,29 +10,28 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 
 
-public class Authorize extends ActionBarActivity {
+public class Authorize extends Activity {
     Button button;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_authorize);
+
+    }
+
+    public void loadImage (View view) {
         if (((ChangeApp)getApplication()).getAccessToken() == null) {
-            Button auth = (Button) findViewById(R.id.authPayments);
-            auth.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent authIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://api.venmo.com/v1/oauth/authorize?client_id=2422&scope=make_payments%20access_profile"));
-                    startActivity(authIntent);
-                }
-            });
+            ImageView auth = (ImageView) findViewById(R.id.authPayments);
+                Intent authIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://api.venmo.com/v1/oauth/authorize?client_id=2422&scope=make_payments%20access_profile"));
+                startActivity(authIntent);
         } else {
             Intent payment = new Intent(this, Payment.class);
             startActivity(payment);
         }
     }
-
 
 
     @Override

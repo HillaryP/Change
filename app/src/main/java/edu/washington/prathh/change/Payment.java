@@ -1,5 +1,6 @@
 package edu.washington.prathh.change;
 
+import android.app.Activity;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.support.v7.app.ActionBarActivity;
@@ -29,7 +30,7 @@ import org.w3c.dom.Text;
 import java.util.List;
 
 
-public class Payment extends ActionBarActivity {
+public class Payment extends Activity {
     public final String ME_URL = "https://api.venmo.com/v1/me?access_token=";
     EditText editText;
     Button button;
@@ -57,6 +58,7 @@ public class Payment extends ActionBarActivity {
             String token = ((ChangeApp)getApplication()).getAccessToken();
             new InfoRequestTask().execute(ME_URL + token);
         }
+        addListenerOnButton2();
     }
 
     public void addListenerOnButton() {
@@ -72,6 +74,21 @@ public class Payment extends ActionBarActivity {
         });
 
     }
+
+    public void addListenerOnButton2() {
+        final Context context = this;
+        Button button2 = (Button) findViewById(R.id.summary);
+        button2.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View arg0) {
+                Intent intent = new Intent(context, Donate.class);
+                startActivity(intent);
+            }
+        });
+
+    }
+
+
 
     public void addNum(View v) {
         String existing = editText.getText().toString();

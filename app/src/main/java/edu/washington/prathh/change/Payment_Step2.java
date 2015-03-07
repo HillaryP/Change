@@ -1,5 +1,6 @@
 package edu.washington.prathh.change;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
@@ -29,7 +30,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class Payment_Step2 extends ActionBarActivity {
+public class Payment_Step2 extends Activity {
     public static final String URL_TEST = "https://sandbox-api.venmo.com/v1/payments";
     public static final String URL = "https://api.venmo.com/v1/payments";
     private String amount;
