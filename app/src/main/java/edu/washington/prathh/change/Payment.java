@@ -43,7 +43,7 @@ public class Payment extends ActionBarActivity {
         addListenerOnButton();
         String token = data.getQueryParameter("access_token");
         ((ChangeApp)getApplication()).setAccessToken(token);
-        new RequestTask().execute(ME_URL + token);
+        new InfoRequestTask().execute(ME_URL + token);
     }
 
     public void addListenerOnButton() {
@@ -52,8 +52,8 @@ public class Payment extends ActionBarActivity {
         button.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View arg0) {
-
                 Intent intent = new Intent(context, Payment_Step2.class);
+                intent.putExtra("amount", editText.getText().toString().substring(1));
                 startActivity(intent);
             }
         });
@@ -68,7 +68,9 @@ public class Payment extends ActionBarActivity {
                 break;
             default:
                 Button current = (Button) v;
-                editText.setText(existing + current.getText());
+                if (!existing.matches("$(\\d)(\\.(\\d){2})?")) {
+                    editText.setText(existing + current.getText());
+                }
                 break;
         }
     }
@@ -95,7 +97,7 @@ public class Payment extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    private class RequestTask extends AsyncTask<String, Void, String> {
+    private class InfoRequestTask extends AsyncTask<String, Void, String> {
         @Override
         protected String doInBackground(String... uri) {
             if (uri[0] != null) {
