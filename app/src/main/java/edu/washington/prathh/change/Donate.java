@@ -4,6 +4,7 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 
 public class Donate extends ActionBarActivity {
@@ -12,6 +13,8 @@ public class Donate extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_donate);
+        TextView textView = (TextView) findViewById(R.id.amount_donated);
+        textView.setText("You have donated $" + ((ChangeApp)getApplication()).getChange() + " so far!\nThat's a lot of change...");
     }
 
 
