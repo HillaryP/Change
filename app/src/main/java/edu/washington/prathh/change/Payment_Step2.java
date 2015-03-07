@@ -1,9 +1,13 @@
 package edu.washington.prathh.change;
 
+import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
 
 public class Payment_Step2 extends ActionBarActivity {
@@ -13,7 +17,6 @@ public class Payment_Step2 extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_payment__step2);
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
