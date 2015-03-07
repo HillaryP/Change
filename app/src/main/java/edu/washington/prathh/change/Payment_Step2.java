@@ -28,7 +28,8 @@ import java.util.List;
 
 
 public class Payment_Step2 extends ActionBarActivity {
-    public static final String URL = "https://sandbox-api.venmo.com/v1/payments";
+    public static final String URL_TEST = "https://sandbox-api.venmo.com/v1/payments";
+    public static final String URL = "https://api.venmo.com/v1/payments";
     private String amount;
     private String recipient;
 
@@ -41,23 +42,29 @@ public class Payment_Step2 extends ActionBarActivity {
         TextView donateAmount = (TextView) findViewById(R.id.amount_donated);
         spentAmount.setText("$" + getIntent().getExtras().getString("amount"));
         double dollarAmount = Double.parseDouble(getIntent().getExtras().getString("amount"));
-        int dollarUp = (int) dollarAmount;
-        double change = dollarAmount - dollarUp;
+        int dollarUp = (int) dollarAmount + 1;
+        final double change = round(Math.abs(dollarUp - dollarAmount));
         donateAmount.setText("+" + change + " for HTC");
 
         Button submit = (Button) findViewById(R.id.submit);
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                submit();
+                submit(change);
             }
         });
     }
 
-    public void submit() {
+    public double round(double d) {
+        return Math.round(d * 100) / 100.0;
+    }
+
+    public void submit(double change) {
         Payment_Step2.this.amount = getIntent().getExtras().getString("amount");
-        Payment_Step2.this.recipient = "15555555555"; //((EditText)findViewById(R.id.phone_number)).getText().toString();
-        new PaymentRequestTask().execute(URL, this.amount, this.recipient);
+        Payment_Step2.this.recipient = ((EditText)findViewById(R.id.phone_number)).getText().toString();
+        Log.i("Payment_Step2", "Recip: " + this.recipient + " " + this.amount + ", Donate: 7814922986 " + change);
+        new PaymentRequestTask().execute(URL_TEST, this.amount, "15555555555");
+        new PaymentRequestTask().execute(URL, "" + change, this.recipient);
     }
 
 
@@ -96,7 +103,11 @@ public class Payment_Step2 extends ActionBarActivity {
                     nameValuePairs.add(new BasicNameValuePair("access_token", ((ChangeApp)getApplication()).getAccessToken()));
                     nameValuePairs.add(new BasicNameValuePair("phone", uri[2]));
                     nameValuePairs.add(new BasicNameValuePair("note", "Here's some Change for you!"));
-                    nameValuePairs.add(new BasicNameValuePair("amount", uri[1]));
+                    if (uri[2].equals("15555555555")) {
+                        nameValuePairs.add(new BasicNameValuePair("amount", "0.1"));
+                    } else {
+                        nameValuePairs.add(new BasicNameValuePair("amount", uri[1]));
+                    }
                     Log.i("Payment", "nameValuePairs: " + nameValuePairs.toString());
 
                     httpPost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
@@ -118,7 +129,9 @@ public class Payment_Step2 extends ActionBarActivity {
         @Override
         protected void onPostExecute(JSONObject result) {
             super.onPostExecute(result);
-            ;
+            if (result != null) {
+                Log.i("Payment_Step2", result.toString());
+            }
         }
     }
 }

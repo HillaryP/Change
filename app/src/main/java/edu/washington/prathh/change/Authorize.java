@@ -16,7 +16,7 @@ public class Authorize extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_authorize);
-        if (((ChangeApp)getApplication()).getAccessToken().length() == 0) {
+        if (((ChangeApp)getApplication()).getAccessToken() == null) {
             Button auth = (Button) findViewById(R.id.authPayments);
             auth.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -52,5 +52,14 @@ public class Authorize extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        if (((ChangeApp)getApplication()).getAccessToken() != null) {
+            Intent payment = new Intent(this, Payment.class);
+            startActivity(payment);
+        }
     }
 }
