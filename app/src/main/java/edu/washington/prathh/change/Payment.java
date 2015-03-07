@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.content.Context;
 import android.widget.Button;
@@ -30,12 +31,14 @@ import java.util.List;
 
 public class Payment extends ActionBarActivity {
     public final String ME_URL = "https://api.venmo.com/v1/me?access_token=";
+    EditText editText;
     Button button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_payment);
+        editText = (EditText) findViewById(R.id.editText);
         Uri data = getIntent().getData();
         addListenerOnButton();
         String token = data.getQueryParameter("access_token");
@@ -47,17 +50,27 @@ public class Payment extends ActionBarActivity {
         final Context context = this;
         button = (Button) findViewById(R.id.button1);
         button.setOnClickListener(new OnClickListener() {
-
             @Override
             public void onClick(View arg0) {
 
                 Intent intent = new Intent(context, Payment_Step2.class);
                 startActivity(intent);
-
             }
-
         });
 
+    }
+
+    public void addNum(View v) {
+        String existing = editText.getText().toString();
+        switch (v.getId()) {
+            case R.id.delete:
+                editText.setText(existing.subSequence(0, existing.length() - 1));
+                break;
+            default:
+                Button current = (Button) v;
+                editText.setText(existing + current.getText());
+                break;
+        }
     }
 
     @Override
