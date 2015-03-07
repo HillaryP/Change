@@ -68,7 +68,7 @@ public class Payment extends Activity {
             @Override
             public void onClick(View arg0) {
                 Intent intent = new Intent(context, Payment_Step2.class);
-                intent.putExtra("amount", editText.getText().toString().substring(1));
+                intent.putExtra("amount", editText.getText().toString());
                 startActivity(intent);
             }
         });
