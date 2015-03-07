@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -18,10 +19,36 @@ public class Settings extends ActionBarActivity {
     }
 
     public void showCheckmark (View view1) {
-        // use view field methods to get image
-        // cast as text view
-        // use info about that view to determine which image needs to be shown
-        //Toast.makeText(this, ((TextView) view1).getText(), Toast.LENGTH_LONG).show();
+        uncheckAll();
+        switch (((TextView) view1).getText().toString()) {
+            case "Human Rights Campaign \nwww.hrc.org":
+                ImageView image = (ImageView) findViewById(R.id.hrc_check);
+                image.setVisibility(View.VISIBLE);
+                break;
+            case "The Trevor Project \nwww.hrc.org":
+                ImageView image2 = (ImageView) findViewById(R.id.trevor_check);
+                image2.setVisibility(View.VISIBLE);
+                break;
+            case "GLAAD \nwww.glaad.org":
+                ImageView image3 = (ImageView) findViewById(R.id.glaad_check);
+                image3.setVisibility(View.VISIBLE);
+                break;
+            case "Campus Pride \nwww.campuspride.org":
+                ImageView image4 = (ImageView) findViewById(R.id.campus_check);
+                image4.setVisibility(View.VISIBLE);
+                break;
+        }
+    }
+
+    public void uncheckAll() {
+        ImageView image = (ImageView) findViewById(R.id.hrc_check);
+        image.setVisibility(View.INVISIBLE);
+        ImageView image2 = (ImageView) findViewById(R.id.trevor_check);
+        image2.setVisibility(View.INVISIBLE);
+        ImageView image3 = (ImageView) findViewById(R.id.glaad_check);
+        image3.setVisibility(View.INVISIBLE);
+        ImageView image4 = (ImageView) findViewById(R.id.campus_check);
+        image4.setVisibility(View.INVISIBLE);
     }
 
 

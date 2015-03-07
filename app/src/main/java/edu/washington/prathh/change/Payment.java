@@ -40,6 +40,14 @@ public class Payment extends ActionBarActivity {
         setContentView(R.layout.activity_payment);
         addListenerOnButton();
         editText = (EditText) findViewById(R.id.editText);
+        Button settings = (Button) findViewById(R.id.settings);
+        settings.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent settingsIntent = new Intent(Payment.this, Settings.class);
+                startActivity(settingsIntent);
+            }
+        });
         if (((ChangeApp)getApplication()).getAccessToken() == null) {
             Uri data = getIntent().getData();
             String token = data.getQueryParameter("access_token");
@@ -126,7 +134,6 @@ public class Payment extends ActionBarActivity {
         @Override
         protected void onPostExecute(String result) {
             super.onPostExecute(result);
-            Toast.makeText(Payment.this, result, Toast.LENGTH_LONG).show();
         }
     }
 }
